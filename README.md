@@ -20,17 +20,20 @@ The notebook is organized around the complete classification workflow:
 2. **Input preparation:** text cleaning, a vocabulary fitted on training documents only, integer encoding and padding, training-only rare-term filtering and BoW standardization, and training-only one-hot encoding of year and month.
 3. **Output and loss:** 18 independent sigmoid outputs trained with binary cross-entropy, suitable for non-exclusive categories.
 4. **Model configuration:** Embedding + LSTM for text; Dense + Batch Normalization + ReLU for BoW; a dense classification head with dropout and L2 regularization; Adam optimization, gradient clipping, and early stopping. A compact search compares configurations using validation macro-F1.
-5. **Evaluation:** micro-F1 and macro-F1 on a held-out test split at a fixed 0.5 threshold.
+5. **Evaluation:** micro-F1 and macro-F1 on a held-out test split at a fixed 0.5 threshold, per-category F1, and a comparison with a logistic-regression baseline on the BoW features.
 
 A reproducible 70/15/15 train/validation/test split is created before fitting preprocessing. The test split is reserved for the final evaluation. The notebook checks the dataset dimensions and label counts and draws the architecture with Matplotlib.
 
+**Tools:** Python, TensorFlow/Keras (functional API), scikit-learn, NumPy, SciPy, Matplotlib.
+
 ## Run the notebook
 
-1. Open `DeepLearning_project.ipynb` in Google Colab or a Jupyter environment with TensorFlow, scikit-learn, SciPy, and Matplotlib installed.
-2. Run the cells from top to bottom.
-3. The setup cell downloads the data archive from [the dataset URL](https://frasca.di.unimi.it/MLDNN/input_data.zip). The dataset itself is not stored in this repository.
+```bash
+pip install -r requirements.txt
+jupyter notebook DeepLearning_project.ipynb
+```
 
-Saved notebook outputs are cleared so plots and metrics are generated in the environment where the notebook runs. The notebook loads the archive with Python pickle, so use the expected data archive from the linked source.
+Run the cells from top to bottom (it also works in Google Colab). The data cell downloads the archive from [the course website](https://frasca.di.unimi.it/MLDNN/input_data.zip) into a local `data/` folder the first time it runs; if the download fails, download `input_data.zip` manually and place it in `data/`. The dataset is not stored in this repository, and the archive is loaded with Python `pickle`, so only use the file from this source.
 
 ## Scope
 

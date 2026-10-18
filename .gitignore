@@ -1,0 +1,7 @@
+# Dataset downloaded by the notebook
+data/
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/

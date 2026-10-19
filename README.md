@@ -49,11 +49,11 @@ pip install -r requirements.txt
 jupyter notebook DeepLearning_project.ipynb
 ```
 
-Run the cells from top to bottom (it also works in Google Colab). The data cell looks for `data/input_data.pkl` or `data/input_data.zip` and otherwise tries to download the archive from [the course website](https://frasca.di.unimi.it/MLDNN/input_data.zip); see [Data availability](#data-availability). The dataset is not stored in this repository, and the archive is loaded with Python `pickle`, so only use the file from this source.
+Place the dataset in a `data/` folder next to the notebook (see [Data availability](#data-availability)), then run the cells from top to bottom; it also works in Google Colab. The archive is loaded with Python `pickle`, so only use a file from a trusted source.
 
 ## Data availability
 
-The news dataset was provided by the course *Machine Learning, Artificial Neural Networks and Deep Learning* (University of Milan) and is not redistributed here. The download URL used by the notebook now returns a different archive, so to run the notebook place the original `input_data.pkl` (or `input_data.zip`) in a `data/` folder next to it. The data-loading cell checks the archive and stops with an explicit message if it does not contain the expected fields.
+The news dataset was provided by the course *Machine Learning, Artificial Neural Networks and Deep Learning* (University of Milan) and is not redistributed here. To run the notebook, place `input_data.pkl` (or `input_data.zip` containing it) in a `data/` folder next to it. The data-loading cell stops with an explicit message if the file is missing or does not contain the expected fields.
 
 ## Scope
 

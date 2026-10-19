@@ -38,7 +38,7 @@ Held-out test set (1,650 news items, 18 categories). Hyperparameters and the dec
 
 - With the default 0.5 threshold the network looks *worse* than the linear baseline (macro-F1 0.52 vs 0.62): it is very precise but misses many labels, because only about 13% of label decisions are positive. Choosing the threshold on validation data fixes this and makes the network the best model.
 - The validation loss reaches its minimum after three epochs and then rises, so the network overfits quickly on 7,700 training items; early stopping restores the best weights.
-- Per-category F1 ranges from about 0.3 to 0.8, so some categories are much harder than others. The notebook includes the full per-category table and chart.
+- At the 0.5 threshold, per-category F1 ranges from about 0.3 to 0.8, so some categories are much harder than others. The notebook includes the full per-category table and chart.
 
 TensorFlow training on CPU is not bit-for-bit deterministic, so the network's scores can vary slightly between runs.
 
@@ -54,4 +54,4 @@ If the file is missing or does not contain the expected fields, the data-loading
 
 ## Scope
 
-This project is a baseline for exploring multi-label classification. Its metrics describe one fixed split and a limited hyperparameter search; they do not guarantee performance on other data or splits.
+The metrics describe one fixed split and a limited hyperparameter search, so they may change with a different split or a wider search.

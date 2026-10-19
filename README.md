@@ -44,16 +44,13 @@ TensorFlow training on CPU is not bit-for-bit deterministic, so the network's sc
 
 ## Run the notebook
 
-```bash
-pip install -r requirements.txt
-jupyter notebook DeepLearning_project.ipynb
-```
+The news dataset was provided by the course *Machine Learning, Artificial Neural Networks and Deep Learning* (University of Milan) and is not included in this repository. To run the notebook:
 
-Place the dataset in a `data/` folder next to the notebook (see [Data availability](#data-availability)), then run the cells from top to bottom; it also works in Google Colab. The archive is loaded with Python `pickle`, so only use a file from a trusted source.
+1. Install the dependencies: `pip install -r requirements.txt`
+2. Place `input_data.pkl` (or `input_data.zip` containing it) in a `data/` folder next to the notebook.
+3. Open `DeepLearning_project.ipynb` in Jupyter or Google Colab and run the cells from top to bottom.
 
-## Data availability
-
-The news dataset was provided by the course *Machine Learning, Artificial Neural Networks and Deep Learning* (University of Milan) and is not redistributed here. To run the notebook, place `input_data.pkl` (or `input_data.zip` containing it) in a `data/` folder next to it. The data-loading cell stops with an explicit message if the file is missing or does not contain the expected fields.
+If the file is missing or does not contain the expected fields, the data-loading cell stops with an explicit message. The archive is loaded with Python `pickle`, so only use a file from a trusted source.
 
 ## Scope
 
